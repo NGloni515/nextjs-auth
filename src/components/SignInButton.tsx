@@ -1,6 +1,6 @@
 'use client';
 import { Link } from '@chakra-ui/next-js';
-import { Button, Container } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import React from 'react';
 

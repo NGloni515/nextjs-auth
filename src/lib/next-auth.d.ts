@@ -1,3 +1,4 @@
+import { JWT } from 'next-auth/jwt';
 import NextAuth from 'next-auth/next';
 
 declare module 'next-auth' {
@@ -11,8 +12,6 @@ declare module 'next-auth' {
     refreshToken: string;
   }
 }
-
-import { JWT } from 'next-auth/jwt';
 
 declare module 'next-auth/jwt' {
   interface JWT {
