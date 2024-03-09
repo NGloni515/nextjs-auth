@@ -5,7 +5,7 @@ import { SignupForm } from './SignUpForm';
 const SignupPage = () => {
   return (
     <div>
-      <div className='p-2'>Sign up</div>
+      <div>Sign up</div>
       <SignupForm />
     </div>
   );

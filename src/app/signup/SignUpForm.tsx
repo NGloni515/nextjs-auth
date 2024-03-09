@@ -7,7 +7,6 @@ const initialValues = { name: '', email: '', password: '' };
 
 export const SignupForm = () => {
   const register = async (values: any) => {
-    console.log(BACKEND_URL + '/auth/register');
     const res = await fetch(BACKEND_URL + '/auth/register', {
       method: 'POST',
       body: JSON.stringify({
@@ -17,11 +16,6 @@ export const SignupForm = () => {
       }),
       headers: {
         'Content-Type': 'application/json',
-        /* 'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,DELETE,PATCH,POST,PUT',
-        'Access-Control-Allow-Headers':
-          'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-        'Access-Control-Allow-Credentials': 'true', */
       },
     });
     if (!res.ok) {
