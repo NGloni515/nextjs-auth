@@ -1,18 +1,17 @@
 'use client';
 import { Link } from '@chakra-ui/next-js';
-import { Container } from '@chakra-ui/react';
+import { Container, Text } from '@chakra-ui/react';
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
 export const SignInButton = () => {
   const { data: session } = useSession();
-  console.log('signInButton', session);
 
   if (session && session.user)
     return (
       <>
         <Container backgroundColor={'gray.200'}>
-          <p color='black'>{session?.user?.name}</p>
+          <Text color='navy.400'>{session?.user?.name}</Text>
           <Link href={'/api/auth/signout'} color={'green.400'}>
             Sign Out
           </Link>

@@ -1,4 +1,5 @@
-import Link from 'next/link';
+'use client';
+import { Link } from '@chakra-ui/next-js';
 import { SignInButton } from './SignInButton';
 
 export const AppBar = () => {
@@ -7,7 +8,7 @@ export const AppBar = () => {
       <Link href={'/'} color='blue.400'>
         Home Page
       </Link>
-      <Link href={'/dashboard'} color='blue.400'>
+      <Link href={'/dashboard'} color='blue.400' _hover={{ color: 'blue.600' }}>
         Dashboard
       </Link>
       <SignInButton />
