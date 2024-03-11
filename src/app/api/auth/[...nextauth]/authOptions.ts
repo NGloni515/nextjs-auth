@@ -1,4 +1,3 @@
-import { headers } from 'next/headers';
 import { NextAuthOptions } from 'next-auth';
 import { JWT } from 'next-auth/jwt';
 import CredentialsProvider from 'next-auth/providers/credentials';
@@ -8,13 +7,11 @@ async function refreshToken(token: JWT): Promise<JWT> {
   const res = await fetch(BACKEND_URL + '/auth/refresh', {
     method: 'POST',
     headers: {
-      authorization: `Refresh ${token.refreshToken}`,
+      authorization: `Bearer ${token.refreshToken}`,
     },
   });
-  console.log('refreshed');
 
   const response = await res.json();
-  console.log('response', response);
 
   return {
     ...token,
