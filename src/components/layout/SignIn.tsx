@@ -20,18 +20,15 @@ const Login = (props: Props) => {
     const res = await signIn('credentials', {
       username: userName.current,
       password: pass.current,
-      redirect: false,
+      redirect: true,
+      callbackUrl: props.callbackUrl ?? 'http://localhost:3000',
     });
-
-    if (!res?.error) {
-      router.push(props.callbackUrl ?? 'http://localhost:3000');
-    }
   };
   return (
     <div className={props.className}>
       <div>Login Form</div>
       {!!props.error && <p>Authentication Failed</p>}
-      <form onSubmit={onSubmit} className='p-2 flex flex-col gap-3'>
+      <form onSubmit={onSubmit}>
         <Input
           name='username'
           placeholder='User Name'
@@ -42,10 +39,8 @@ const Login = (props: Props) => {
           type='password'
           onChange={(e) => (pass.current = e.target.value)}
         />
-        <div className='flex items-center justify-center mt-2 gap-2'>
-          <Button type='submit' className='w-28'>
-            Sign In
-          </Button>
+        <div>
+          <Button type='submit'>Sign In</Button>
           <Link href={props.callbackUrl ?? '/'}>Cancel</Link>
         </div>
       </form>
