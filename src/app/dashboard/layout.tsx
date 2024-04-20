@@ -12,7 +12,7 @@ const DashboardLayout = async (props: Props) => {
   console.log('session!!', session);
   return (
     <div>
-      <Link href={`/dashboard/user/${session?.user.id}`}>User Profile</Link>
+      <Link href={`/dashboard/user/${session?.user?.id}`}>User Profile</Link>
       <div>{props.children}</div>
     </div>
   );
