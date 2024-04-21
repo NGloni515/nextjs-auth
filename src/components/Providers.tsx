@@ -1,10 +1,12 @@
 'use client';
 
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, IconButton } from '@chakra-ui/react';
 import { SessionProvider } from 'next-auth/react';
 import { ReactNode } from 'react';
 
 import theme from '@/theme';
+
+import SidenavProvider from './layout/sidenav/sidenav-context/sidenav-context';
 
 interface Props {
   children: ReactNode;
@@ -13,7 +15,9 @@ interface Props {
 const Providers = ({ children }: Props) => {
   return (
     <ChakraProvider theme={theme}>
-      <SessionProvider>{children}</SessionProvider>
+      <SidenavProvider>
+        <SessionProvider>{children}</SessionProvider>
+      </SidenavProvider>
     </ChakraProvider>
   );
 };
