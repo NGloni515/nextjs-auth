@@ -13,7 +13,7 @@ export function SidenavContainer({ children, sidenav }: SidenavContainerProps) {
         <Box
           pos='sticky'
           top={0}
-          w={{ base: 0, md: '72px' }}
+          w={{ base: 0, md: '180px' }}
           borderRight='1px solid'
           borderColor='gray.100'
           p={{ base: 0, md: 2 }}
